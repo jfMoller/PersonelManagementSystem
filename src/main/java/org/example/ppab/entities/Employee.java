@@ -2,68 +2,55 @@ package org.example.ppab.entities;
 
 import org.example.ppab.enums.Gender;
 
-import java.util.Random;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
-import static org.example.ppab.enums.Gender.FEMALE;
-import static org.example.ppab.enums.Gender.MALE;
+public class Employee extends Personell {
+    private double salary;
+    private final LocalDateTime startDate;
+    private static List<Employee> employees = new ArrayList<>();
 
-public class Employee {
-    private final String id;
-    private String name;
-    private final Gender gender;
-
-    public Employee(String name, Gender gender) {
-        this.id = getUniqueId(gender);
-        this.name = name;
-        this.gender = gender;
+    public Employee(String name, Gender gender, double salary, LocalDateTime startDate) {
+        super(name, gender);
+        this.salary = salary;
+        this.startDate = startDate;
+        employees.add(this);
     }
 
-    public String getId() {
-        return id;
+    public double getSalary() {
+        return salary;
     }
 
-    public String getName() {
-        return name;
+    public LocalDateTime getStartDate() {
+        return startDate;
     }
 
-    public Gender getGender() {
-        return gender;
+    public static List<Employee> getEmployees() {
+        return employees;
     }
 
-    private String getUniqueId(Gender gender) {
-        int idLength = 12;
-
-        if (gender.equals(MALE)) return generateUniqueDigitString(idLength, false);
-
-        else if (gender.equals(FEMALE)) return generateUniqueDigitString(idLength, true);
-
-        else throw new IllegalArgumentException("Invalid gender enum: " + gender);
+    public void adjustSalary(double adjustment) {
+        //handles an increase (positive adjustment) or decrease (negative adjustment) in salary,
+        this.salary += adjustment;
     }
 
-    private String generateUniqueDigitString(int stringLength, boolean isEvenLastDigit) {
-        Random random = new Random();
-        StringBuilder digits = new StringBuilder(stringLength);
+    public static void compareMeanSalaryByGender() {
+        Double maleMeanSalary = getMeanSalary(Gender.MALE);
+        Double femaleMeanSalary = getMeanSalary(Gender.FEMALE);
 
-        // Handles generation of the digits equivalent to (stringLength - 1),
-        // e.g. the 11 / 12 digits if stringLength = 12
-        for (int digit = 1; digit <= (stringLength - 1); ++digit) {
-            int randomDigit = random.nextInt(10); // Generates a random digit between 0 and 9
-            digits.append(randomDigit);
-        }
-        // Handles generation of the last digit
-        int lastDigit = generateRandomDigit(isEvenLastDigit);
-        digits.append(lastDigit);
-
-        return digits.toString();
+        System.out.println("Mean salary comparison:");
+        System.out.println("    -Male mean salary: " + maleMeanSalary);
+        System.out.println("    -Female mean salary: " + femaleMeanSalary);
     }
 
-    private int generateRandomDigit(boolean isEven) {
-        Random random = new Random();
-        int randomDigit;
-        do {
-            randomDigit = random.nextInt(10);
-        } while ((randomDigit == 0) || (isEven ? randomDigit % 2 != 0 : randomDigit % 2 == 0) );
-        return randomDigit;
+    private static double getMeanSalary(Gender gender) {
+        double meanSalary = employees.stream()
+                .filter(employee -> employee.getGender() == gender)
+                .mapToDouble(Employee::getSalary)
+                .average()
+                .orElse(0.0);
+        return meanSalary;
     }
 
 }
