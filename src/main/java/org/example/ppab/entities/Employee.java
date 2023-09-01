@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Employee extends Personell {
+public class Employee extends Personel {
     private double salary;
     private final LocalDateTime startDate;
     private static List<Employee> employees = new ArrayList<>();
@@ -28,6 +28,10 @@ public class Employee extends Personell {
 
     public static List<Employee> getEmployees() {
         return employees;
+    }
+
+    public static void clearEmployees() {
+        employees.clear();
     }
 
     public void adjustSalary(double adjustment) {
@@ -52,5 +56,7 @@ public class Employee extends Personell {
                 .orElse(0.0);
         return meanSalary;
     }
+
+
 
 }

@@ -1,4 +1,4 @@
-import org.example.ppab.entities.Personell;
+import org.example.ppab.entities.Personel;
 import org.example.ppab.enums.Gender;
 import org.junit.jupiter.api.Test;
 
@@ -6,7 +6,7 @@ import static org.example.ppab.enums.Gender.FEMALE;
 import static org.example.ppab.enums.Gender.MALE;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class PersonellTest {
+public class PersonelTest {
 
     @Test
     public void testPersonellConstructorArguments() {
@@ -15,21 +15,21 @@ public class PersonellTest {
         Gender gender = MALE;
 
         // When
-        Personell personell = new Personell(name, gender);
+        Personel personel = new Personel(name, gender);
 
         // Then
-        assertNotNull(personell);
-        assertEquals(name, personell.getName());
-        assertEquals(gender, personell.getGender());
+        assertNotNull(personel);
+        assertEquals(name, personel.getName());
+        assertEquals(gender, personel.getGender());
     }
 
     @Test
     public void testMalePersonellIdFormat() {
         // Given
-        Personell malePersonell = new Personell("John", MALE);
+        Personel malePersonel = new Personel("John", MALE);
 
         // When
-        String maleId = malePersonell.getId();
+        String maleId = malePersonel.getId();
 
         // Then
         assertTrue(maleId.matches("^[0-9]{11}[13579]$")); // Matches 11 digits followed by an uneven number
@@ -38,10 +38,10 @@ public class PersonellTest {
     @Test
     public void testFemalePersonellIdFormat() {
         // Given
-        Personell femalePersonell = new Personell("Jane", FEMALE);
+        Personel femalePersonel = new Personel("Jane", FEMALE);
 
         // When
-        String femaleId = femalePersonell.getId();
+        String femaleId = femalePersonel.getId();
 
         // Then
         assertTrue(femaleId.matches("^[0-9]{11}[2468]$")); // Matches 11 digits followed by an even number

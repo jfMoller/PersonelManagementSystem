@@ -1,5 +1,6 @@
 import org.example.ppab.entities.Employee;
 import org.example.ppab.enums.Gender;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
@@ -13,6 +14,12 @@ import static org.example.ppab.enums.Gender.MALE;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class EmployeeTest {
+    @BeforeEach
+    public void setUp() {
+        // Clear the Employee list before each test
+        Employee.clearEmployees();
+    }
+
     @Test
     public void testEmployeeConstructorArguments() {
         // Given
@@ -122,6 +129,8 @@ public class EmployeeTest {
     @Test
     void testEmployeesArrayListInstance() {
         // Given
+
+
         Employee employee1 = new Employee(
                 "Mark", MALE, 42000,
                 LocalDateTime.of(1995, 5, 4, 9, 0));
@@ -139,7 +148,7 @@ public class EmployeeTest {
 
         // When
         List<Employee> expectedEmployees = new ArrayList<>(List.of(employee1, employee2));
-        List<Employee> employees = Employee.getEmployees();
+        List <Employee> employees = Employee.getEmployees();
 
         // Then
         assertEquals(expectedEmployees, employees);
