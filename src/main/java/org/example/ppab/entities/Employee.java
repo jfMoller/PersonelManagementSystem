@@ -3,10 +3,9 @@ package org.example.ppab.entities;
 import org.example.ppab.enums.Gender;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
-public class Employee extends Personel {
+public class Employee extends Personnel {
     private double salary;
     private final LocalDateTime startDate;
     private static List<Employee> employees = new ArrayList<>();
@@ -31,6 +30,7 @@ public class Employee extends Personel {
     }
 
     public static void clearEmployees() {
+        //used for testing purposes
         employees.clear();
     }
 
@@ -57,6 +57,30 @@ public class Employee extends Personel {
         return meanSalary;
     }
 
+    public static void printEmployeesByStartDate(boolean isOrderByLengthOfEmployment) {
+        List<Employee> orderedList = new ArrayList(employees);
+        if (isOrderByLengthOfEmployment) {
+            Collections.sort(orderedList, Comparator.comparing(Employee::getStartDate));
+        } else {
+            Collections.sort(orderedList, Comparator.comparing(Employee::getStartDate).reversed());
+        }
 
+        int number = 1;
+        for (Employee employee : orderedList) {
+            System.out.println(employee.printDetails(number));
+            number++;
+        }
+
+    }
+
+    public String printDetails(int number) {
+        return "Employee - " + number +
+                " - id: " + this.getId() +
+                " - name: " + this.getName() +
+                " - gender: " + this.getGender() +
+                " - salary: " + salary +
+                " - startDate: " + startDate +
+                "-".repeat(30);
+    }
 
 }

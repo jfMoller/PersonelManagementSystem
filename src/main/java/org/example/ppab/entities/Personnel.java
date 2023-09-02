@@ -6,12 +6,12 @@ import org.example.ppab.enums.Gender;
 import static org.example.ppab.enums.Gender.FEMALE;
 import static org.example.ppab.enums.Gender.MALE;
 
-public class Personel {
+public class Personnel {
     private final String id;
     private String name;
     private final Gender gender;
 
-    public Personel(String name, Gender gender) {
+    public Personnel(String name, Gender gender) {
         this.id = getUniqueId(gender);
         this.name = name;
         this.gender = gender;

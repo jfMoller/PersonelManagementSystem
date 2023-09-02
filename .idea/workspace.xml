@@ -6,16 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="fc03870a-31fa-4f22-8121-387fbfab9d7f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ppab/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ppab/entities/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ppab/entities/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ppab/entities/Personell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ppab/entities/Personel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ppab/entities/Personel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ppab/entities/Personnel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/EmployeeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/EmployeeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PersonellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PersonelTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/ppab/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PersonelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PersonnelTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/ppab/entities/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/ppab/entities/Employee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/ppab/entities/Personell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/ppab/entities/Personel.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/EmployeeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/EmployeeTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/PersonellTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/PersonelTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,20 +48,20 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "editor.preferences.appearance",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.appearance&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\J_TH\Desktop\Objektorienterad analys och design\Inlämningsuppgift 1\Inlämningsuppgift\perfect_products_ab\src\main\java" />
@@ -73,19 +71,6 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.All in perfect_products_ab">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.ppab.Main" />
-      <module name="perfect_products_ab" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.ppab.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="All in perfect_products_ab" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="perfect_products_ab" />
       <option name="PACKAGE_NAME" value="" />
@@ -94,30 +79,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EmployeeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EmployeeTest.testEmployeeDetails" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="perfect_products_ab" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="EmployeeTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EmployeeTest.testEmployeesArrayListInstance" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="perfect_products_ab" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="EmployeeTest" />
-      <option name="METHOD_NAME" value="testEmployeesArrayListInstance" />
+      <option name="METHOD_NAME" value="testEmployeeDetails" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EmployeeTest.testSortingOfEmployeesByStartDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TraineeTest.testEmployeeConstructorArguments" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="perfect_products_ab" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="EmployeeTest" />
-      <option name="METHOD_NAME" value="testSortingOfEmployeesByStartDate" />
+      <option name="MAIN_CLASS_NAME" value="TraineeTest" />
+      <option name="METHOD_NAME" value="testEmployeeConstructorArguments" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TraineeTest.testTraineeConstructorArguments" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="perfect_products_ab" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TraineeTest" />
+      <option name="METHOD_NAME" value="testTraineeConstructorArguments" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TraineeTest.testTraineePerformanceAssessment" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="perfect_products_ab" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TraineeTest" />
+      <option name="METHOD_NAME" value="testTraineePerformanceAssessment" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -126,10 +122,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in perfect_products_ab" />
-        <item itemvalue="JUnit.EmployeeTest" />
-        <item itemvalue="JUnit.EmployeeTest.testEmployeesArrayListInstance" />
-        <item itemvalue="JUnit.EmployeeTest.testSortingOfEmployeesByStartDate" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.TraineeTest.testTraineePerformanceAssessment" />
+        <item itemvalue="JUnit.TraineeTest.testTraineeConstructorArguments" />
+        <item itemvalue="JUnit.TraineeTest.testEmployeeConstructorArguments" />
+        <item itemvalue="JUnit.EmployeeTest.testEmployeeDetails" />
       </list>
     </recent_temporary>
   </component>
@@ -144,6 +140,10 @@
       <workItem from="1693483466414" duration="142000" />
       <workItem from="1693484763391" duration="8310000" />
       <workItem from="1693559285985" duration="9823000" />
+      <workItem from="1693573971593" duration="2807000" />
+      <workItem from="1693578368590" duration="1794000" />
+      <workItem from="1693642370060" duration="1555000" />
+      <workItem from="1693643937346" duration="27000" />
     </task>
     <servers />
   </component>
