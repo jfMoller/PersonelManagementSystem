@@ -1,4 +1,4 @@
-package org.example.ppab;
+package org.example.ppab.utilities;
 
 import java.util.Random;
 

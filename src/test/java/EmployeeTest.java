@@ -65,7 +65,7 @@ public class EmployeeTest {
         // Given
         String name = "John Doe";
         Gender gender = MALE;
-        Double salary = 23000d;
+        double salary = 23000d;
         LocalDateTime startDate = LocalDateTime.of(2022, 5, 4, 7, 1);
 
         // When
@@ -80,6 +80,25 @@ public class EmployeeTest {
         // Then
         assertEquals((initialSalary + salaryDecrease), decreasedSalary);
 
+    }
+
+    @Test
+    void testEmployeeSetterMethods() {
+        // Given
+        Employee employee = new Employee(
+                "Sid", MALE, 42000,
+                LocalDateTime.of(1995, 5, 4, 9, 0));
+
+        // When
+        double expectedSalary = 50000;
+        LocalDateTime expectedStartDate = LocalDateTime.of(2000, 6, 2, 8, 15);
+
+        employee.setSalary(expectedSalary);
+        employee.setStartDate(expectedStartDate);
+
+        // Then
+        assertEquals(expectedSalary, employee.getSalary());
+        assertEquals(expectedStartDate, employee.getStartDate());
     }
 
     @Test
@@ -148,7 +167,7 @@ public class EmployeeTest {
 
         // When
         List<Employee> expectedEmployees = new ArrayList<>(List.of(employee1, employee2));
-        List <Employee> employees = Employee.getEmployees();
+        List<Employee> employees = Employee.getEmployees();
 
         // Then
         assertEquals(expectedEmployees, employees);

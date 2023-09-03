@@ -31,6 +31,26 @@ public class TraineeTest {
     }
 
     @Test
+    void testTraineeSetterMethods() {
+        // Given
+        Trainee trainee = new Trainee(
+                "Sid", MALE,
+                LocalDateTime.of(1995, 5, 4, 9, 0),
+                LocalDateTime.of(1995, 9, 5, 17, 0));
+
+        // When
+        LocalDateTime expectedStartDate = LocalDateTime.of(2000, 5, 4, 9, 0);
+        LocalDateTime expectedEndDate = LocalDateTime.of(2000, 7, 7, 17, 0);
+
+        trainee.setStartDate(expectedStartDate);
+        trainee.setEndDate(expectedEndDate);
+
+        // Then
+        assertEquals(expectedStartDate, trainee.getStartDate());
+        assertEquals(expectedEndDate, trainee.getEndDate());
+    }
+
+    @Test
     public void testTraineePerformanceAssessment() {
         // Given
         String name = "John Doe";
@@ -43,7 +63,7 @@ public class TraineeTest {
 
         String expectedPerformanceAssessment =
                 "Assessment of: " + name +
-                ", related to the trainee period: " + startDate + " - " + endDate +
+                        ", related to the trainee period: " + startDate + " - " + endDate +
                         ", performance grade: " + A;
 
         String performanceAssessment = trainee.getPerformanceAssessment(A);

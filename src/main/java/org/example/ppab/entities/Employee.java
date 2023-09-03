@@ -7,7 +7,7 @@ import java.util.*;
 
 public class Employee extends Personnel {
     private double salary;
-    private final LocalDateTime startDate;
+    private LocalDateTime startDate;
     private static List<Employee> employees = new ArrayList<>();
 
     public Employee(String name, Gender gender, double salary, LocalDateTime startDate) {
@@ -23,6 +23,14 @@ public class Employee extends Personnel {
 
     public LocalDateTime getStartDate() {
         return startDate;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public void setStartDate(LocalDateTime startDate) {
+        this.startDate = startDate;
     }
 
     public static List<Employee> getEmployees() {
