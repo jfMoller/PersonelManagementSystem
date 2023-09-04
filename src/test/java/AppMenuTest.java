@@ -31,15 +31,17 @@ public class AppMenuTest {
 
         // When
         String expectedMenuLayout = """
-                Perfect Products AB
-                Welcome to the Personnel Management System!
-
-                1. Display total number of people in the system
-                2. Display average salary for men and women among employees
-                3. Display a list of employees sorted by their hiring date (earliest to latest)
-                4. Exit
-
-                Please enter your choice (1/2/3/4): 
+                ████████████████████████████████████████████████████████████████████████████████
+                █                               Perfect Products AB                            █
+                █                   Welcome to the Personnel Management System                 █
+                ████████████████████████████████████████████████████████████████████████████████
+                █ 1. Display total number of people in the system                              █
+                █ 2. Display average salary for men and women among employees                  █
+                █ 3. Display employees sorted by their hiring date (earliest to latest)        █
+                █ 4. Exit                                                                      █
+                ████████████████████████████████████████████████████████████████████████████████
+                █ Please enter your choice (1/2/3/4):                                          █
+                ████████████████████████████████████████████████████████████████████████████████
                 """;
 
         // Then
@@ -60,11 +62,13 @@ public class AppMenuTest {
 
         // When
         String expectedOptionLayout =
-                "1. Display total number of people in the system\n" +
+                        "████████████████████████████████████████████████████████████████████████████████\n" +
+                        "1. Display total number of people in the system\n" +
                         "   - Amount of employees: " + "1" + "\n" +
                         "   - Amount of trainees: " + "1" + "\n" +
                         "   - Total amount of people: " + "2" + "\n" +
-                        "\nPress any key to return to the menu:";
+                        "\nPress any key to return to the menu...\n" +
+                        "████████████████████████████████████████████████████████████████████████████████\n";
 
         // Then
         assertEquals(expectedOptionLayout, AppMenu.getTotalPersonnel());
@@ -85,10 +89,13 @@ public class AppMenuTest {
         AppMenu.getMeanSalaryByGender();
 
         // When
-        String expectedOptionLayout = "2. Display average salary for men and women among employees\n" +
+        String expectedOptionLayout =
+                "████████████████████████████████████████████████████████████████████████████████\n" +
+                "2. Display average salary for men and women among employees\n" +
                 "   - Mean salary: " + "42000" + " kr (men, n = " + "1" + ")\n" +
                 "   - Mean salary: " + "42000" + " kr (women, n = " + "1" + ")\n" +
-                "\nPress any key to return to the menu:";
+                "\nPress any key to return to the menu...\n" +
+                "████████████████████████████████████████████████████████████████████████████████\n";
 
         // Then
         assertEquals(expectedOptionLayout, AppMenu.getMeanSalaryByGender());
@@ -114,6 +121,7 @@ public class AppMenuTest {
 
         // When
         String expectedOptionLayout =
+                "████████████████████████████████████████████████████████████████████████████████\n" +
                 "3. Display a list of employees sorted by their hiring date (earliest to latest)\n" +
                         "Employee - 1\n" +
                         "- id: " + employee1.getId() + "\n" +
@@ -136,7 +144,8 @@ public class AppMenuTest {
                         "- salary: " + employee3.getSalary() + "\n" +
                         "- startDate: " + employee3.getStartDate() + "\n" +
                         "-".repeat(30) + "\n" +
-                        "Press any key to return to the menu:";
+                        "Press any key to return to the menu...\n" +
+                        "████████████████████████████████████████████████████████████████████████████████\n";
 
         // Then
         assertEquals(expectedOptionLayout, AppMenu.getEmployeesByHiringDate());
@@ -149,7 +158,9 @@ public class AppMenuTest {
 
         // When
         String expectedOptionLayout = """
+                ████████████████████████████████████████████████████████████████████████████████
                 Shutting down...
+                ████████████████████████████████████████████████████████████████████████████████
                    """;
 
         // Then

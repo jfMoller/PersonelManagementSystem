@@ -5,19 +5,68 @@ import org.example.ppab.entities.Personnel;
 import org.example.ppab.enums.Gender;
 
 import java.text.DecimalFormat;
+import java.util.Scanner;
 
 public class AppMenu {
+
+    public static void run() {
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            printMenu();
+            if (scanner.hasNextInt()) {
+                int choice = scanner.nextInt();
+                switch (choice) {
+                    case 1 -> displayTotalPersonnel();
+                    case 2 -> displayMeanSalaryByGender();
+                    case 3 -> displayEmployeesByHiringDate();
+                    case 4 -> {
+                        System.out.print(getShutdownMessage());
+                        return;
+                    }
+                }
+            } else {
+                scanner.next();
+                System.out.println("Invalid choice, try again...");
+            }
+        }
+    }
+
+    public static void printMenu() {
+        System.out.print(getMenuLayout());
+    }
+
+    public static void displayTotalPersonnel() {
+        System.out.print(getTotalPersonnel());
+        Scanner scanner = new Scanner(System.in);
+        scanner.nextLine();
+    }
+
+    public static void displayMeanSalaryByGender() {
+        System.out.print(getMeanSalaryByGender());
+        Scanner scanner = new Scanner(System.in);
+        scanner.nextLine();
+    }
+
+    public static void displayEmployeesByHiringDate() {
+        System.out.print(getEmployeesByHiringDate());
+        Scanner scanner = new Scanner(System.in);
+        scanner.nextLine();
+    }
+
     public static String getMenuLayout() {
         return """
-                Perfect Products AB
-                Welcome to the Personnel Management System!
-
-                1. Display total number of people in the system
-                2. Display average salary for men and women among employees
-                3. Display a list of employees sorted by their hiring date (earliest to latest)
-                4. Exit
-
-                Please enter your choice (1/2/3/4): 
+                ████████████████████████████████████████████████████████████████████████████████
+                █                               Perfect Products AB                            █
+                █                   Welcome to the Personnel Management System                 █
+                ████████████████████████████████████████████████████████████████████████████████
+                █ 1. Display total number of people in the system                              █
+                █ 2. Display average salary for men and women among employees                  █
+                █ 3. Display employees sorted by their hiring date (earliest to latest)        █
+                █ 4. Exit                                                                      █
+                ████████████████████████████████████████████████████████████████████████████████
+                █ Please enter your choice (1/2/3/4):                                          █
+                ████████████████████████████████████████████████████████████████████████████████
                 """;
     }
 
@@ -26,11 +75,14 @@ public class AppMenu {
         int traineeCount = Personnel.getTotalTrainees();
         int totalPersonnelCount = Personnel.getTotalPersonnel();
 
-        return "1. Display total number of people in the system\n" +
+        return "████████████████████████████████████████████████████████████████████████████████\n" +
+                "1. Display total number of people in the system\n" +
                 "   - Amount of employees: " + employeeCount + "\n" +
                 "   - Amount of trainees: " + traineeCount + "\n" +
                 "   - Total amount of people: " + totalPersonnelCount + "\n" +
-                "\nPress any key to return to the menu:";
+                "\nPress any key to return to the menu...\n" +
+                "████████████████████████████████████████████████████████████████████████████████\n";
+
     }
 
     public static String getMeanSalaryByGender() {
@@ -42,15 +94,18 @@ public class AppMenu {
         double femaleMeanSalary = Employee.getMeanSalary(Gender.FEMALE);
         int femaleEmployeeCount = Personnel.getTotalEmployees(Gender.FEMALE);
 
-        return "2. Display average salary for men and women among employees\n" +
+        return  "████████████████████████████████████████████████████████████████████████████████\n" +
+                "2. Display average salary for men and women among employees\n" +
                 "   - Mean salary: " + decimalFormat.format(maleMeanSalary) + " kr (men, n = " + maleEmployeeCount + ")\n" +
                 "   - Mean salary: " + decimalFormat.format(femaleMeanSalary) + " kr (women, n = " + femaleEmployeeCount + ")\n" +
-                "\nPress any key to return to the menu:";
+                "\nPress any key to return to the menu...\n" +
+                "████████████████████████████████████████████████████████████████████████████████\n";
     }
 
     public static String getEmployeesByHiringDate() {
         StringBuilder employeesBuilder = new StringBuilder();
 
+        employeesBuilder.append("████████████████████████████████████████████████████████████████████████████████\n");
         employeesBuilder.append("3. Display a list of employees sorted by their hiring date (earliest to latest)\n");
 
         int number = 1;
@@ -65,14 +120,17 @@ public class AppMenu {
             number++;
         }
 
-        employeesBuilder.append("Press any key to return to the menu:");
+        employeesBuilder.append("Press any key to return to the menu...\n");
+        employeesBuilder.append("████████████████████████████████████████████████████████████████████████████████\n");
 
         return employeesBuilder.toString();
     }
 
     public static String getShutdownMessage() {
         return """
+                ████████████████████████████████████████████████████████████████████████████████
                 Shutting down...
+                ████████████████████████████████████████████████████████████████████████████████
                    """;
     }
 
