@@ -5,21 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc03870a-31fa-4f22-8121-387fbfab9d7f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/AppMenuTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ppab/DigitString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ppab/utilities/DigitString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ppab/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ppab/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ppab/entities/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ppab/entities/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ppab/entities/Personnel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ppab/entities/Personnel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ppab/entities/Trainee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ppab/entities/Trainee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/EmployeeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/EmployeeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MenuTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/PersonnelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PersonnelTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TraineeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TraineeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/ppab/DigitString.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/ppab/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/ppab/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/ppab/entities/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/ppab/entities/Employee.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/ppab/entities/Personnel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/ppab/entities/Personnel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/ppab/entities/Trainee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/ppab/entities/Trainee.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/EmployeeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/EmployeeTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/PersonnelTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PersonnelTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/TraineeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TraineeTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,41 +84,40 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EmployeeTest.testEmployeeSetterMethods" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AppMenuTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="perfect_products_ab" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="EmployeeTest" />
-      <option name="METHOD_NAME" value="testEmployeeSetterMethods" />
+      <option name="MAIN_CLASS_NAME" value="AppMenuTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppMenuTest.testDisplayEmployeeMeanSalaries" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="perfect_products_ab" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AppMenuTest" />
+      <option name="METHOD_NAME" value="testDisplayEmployeeMeanSalaries" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PersonnelTest.testPersonnelArrayListInstance" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AppMenuTest.testDisplayEmployeesByHiringDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="perfect_products_ab" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PersonnelTest" />
-      <option name="METHOD_NAME" value="testPersonnelArrayListInstance" />
+      <option name="MAIN_CLASS_NAME" value="AppMenuTest" />
+      <option name="METHOD_NAME" value="testDisplayEmployeesByHiringDate" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PersonnelTest.testShowPersonnel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AppMenuTest.testDisplayTotalPersonnel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="perfect_products_ab" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PersonnelTest" />
-      <option name="METHOD_NAME" value="testShowPersonnel" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TraineeTest.testTraineeSetterMethods" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="perfect_products_ab" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TraineeTest" />
-      <option name="METHOD_NAME" value="testTraineeSetterMethods" />
+      <option name="MAIN_CLASS_NAME" value="AppMenuTest" />
+      <option name="METHOD_NAME" value="testDisplayTotalPersonnel" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -128,10 +126,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in perfect_products_ab" />
-        <item itemvalue="JUnit.PersonnelTest.testShowPersonnel" />
-        <item itemvalue="JUnit.PersonnelTest.testPersonnelArrayListInstance" />
-        <item itemvalue="JUnit.TraineeTest.testTraineeSetterMethods" />
-        <item itemvalue="JUnit.EmployeeTest.testEmployeeSetterMethods" />
+        <item itemvalue="JUnit.AppMenuTest.testDisplayEmployeesByHiringDate" />
+        <item itemvalue="JUnit.AppMenuTest" />
+        <item itemvalue="JUnit.AppMenuTest.testDisplayEmployeeMeanSalaries" />
+        <item itemvalue="JUnit.AppMenuTest.testDisplayTotalPersonnel" />
       </list>
     </recent_temporary>
   </component>
@@ -151,6 +149,7 @@
       <workItem from="1693642370060" duration="1555000" />
       <workItem from="1693643937346" duration="27000" />
       <workItem from="1693732214064" duration="4843000" />
+      <workItem from="1693812584750" duration="11138000" />
     </task>
     <servers />
   </component>

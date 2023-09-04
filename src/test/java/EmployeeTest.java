@@ -1,5 +1,7 @@
 import org.example.ppab.entities.Employee;
+import org.example.ppab.entities.Personnel;
 import org.example.ppab.enums.Gender;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -15,9 +17,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class EmployeeTest {
     @BeforeEach
-    public void setUp() {
-        // Clear the Employee list before each test
-        Employee.clearEmployees();
+    public void clearBefore() {
+        Personnel.clearPersonnel();
+    }
+
+    @AfterEach
+    public void clearAfter() {
+        Personnel.clearPersonnel();
     }
 
     @Test
@@ -207,25 +213,4 @@ public class EmployeeTest {
         assertTrue(employees.equals(expectedDescendingOrder));
     }
 
-    @Test
-    public void testEmployeeDetails() {
-        // Given
-        Employee employee1 = new Employee(
-                "Mark", MALE, 42000,
-                LocalDateTime.of(1995, 5, 4, 9, 0));
-
-        // When
-        String expectedEmployeeDetails = "Employee - " + "1" +
-                " - id: " + employee1.getId() +
-                " - name: " + employee1.getName() +
-                " - gender: " + employee1.getGender() +
-                " - salary: " + employee1.getSalary() +
-                " - startDate: " + employee1.getStartDate() +
-                "-".repeat(30);
-
-        String employeeDetails = employee1.printDetails(1);
-
-        // Then
-        assertEquals(expectedEmployeeDetails, employeeDetails);
-    }
 }

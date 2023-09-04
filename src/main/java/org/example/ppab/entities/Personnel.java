@@ -1,7 +1,7 @@
 package org.example.ppab.entities;
 
-import org.example.ppab.utilities.DigitString;
 import org.example.ppab.enums.Gender;
+import org.example.ppab.utilities.DigitString;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +14,7 @@ public class Personnel {
     private String name;
     private Gender gender;
 
-    private static List<Personnel> personnel = new ArrayList<>();
+    protected static List<Personnel> personnel = new ArrayList<>();
 
     public Personnel(String name, Gender gender) {
         this.id = getUniqueId(gender);
@@ -61,4 +61,57 @@ public class Personnel {
 
         else throw new IllegalArgumentException("Invalid gender enum: " + gender);
     }
+
+    public static int getTotalPersonnel() {
+        return personnel.size();
+    }
+
+    public static int getTotalEmployees() {
+        int employeeCount = 0;
+
+        for (Personnel person : personnel) {
+            if (person instanceof Employee) {
+                employeeCount++;
+            }
+        }
+
+        return employeeCount;
+    }
+
+    public static int getTotalEmployees(Gender gender) {
+        int employeeCount = 0;
+
+        for (Personnel person : personnel) {
+            if (person instanceof Employee && person.gender == gender) {
+                employeeCount++;
+            }
+        }
+
+        return employeeCount;
+    }
+
+    public static int getTotalTrainees() {
+        int traineeCount = 0;
+
+        for (Personnel person : personnel) {
+            if (person instanceof Trainee) {
+                traineeCount++;
+            }
+        }
+
+        return traineeCount;
+    }
+
+    public static List<Employee> getEmployeesList() {
+        List<Employee> employees = new ArrayList<>();
+
+        for (Personnel person : personnel) {
+            if (person instanceof Employee) {
+                employees.add((Employee) person);
+            }
+        }
+
+        return employees;
+    }
+
 }

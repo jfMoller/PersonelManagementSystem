@@ -2,6 +2,7 @@ import org.example.ppab.entities.Employee;
 import org.example.ppab.entities.Personnel;
 import org.example.ppab.entities.Trainee;
 import org.example.ppab.enums.Gender;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -16,8 +17,12 @@ import static org.junit.jupiter.api.Assertions.*;
 public class PersonnelTest {
 
     @BeforeEach
-    public void setUp() {
-        // Clear the personell list before each test
+    public void clearBefore() {
+        Personnel.clearPersonnel();
+    }
+
+    @AfterEach
+    public void clearAfter() {
         Personnel.clearPersonnel();
     }
 
@@ -104,7 +109,7 @@ public class PersonnelTest {
     }
 
     @Test
-    public void testShowPersonnel() {
+    public void testCountPersonnelCohorts() {
         // Given
         int expectedEmployeeCount = 1;
         int expectedTraineeCount = 1;

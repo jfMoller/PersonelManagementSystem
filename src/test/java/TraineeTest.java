@@ -1,5 +1,8 @@
+import org.example.ppab.entities.Personnel;
 import org.example.ppab.entities.Trainee;
 import org.example.ppab.enums.Gender;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
@@ -10,6 +13,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class TraineeTest {
+
+    @BeforeEach
+    public void clearBefore() {
+        Personnel.clearPersonnel();
+    }
+
+    @AfterEach
+    public void clearAfter() {
+        Personnel.clearPersonnel();
+    }
 
     @Test
     public void testTraineeConstructorArguments() {
