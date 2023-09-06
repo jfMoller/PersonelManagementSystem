@@ -1,6 +1,7 @@
 import org.example.ppab.entities.Employee;
 import org.example.ppab.entities.Personnel;
 import org.example.ppab.enums.Gender;
+import org.example.ppab.utilities.PersonnelUtility;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -17,12 +18,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class EmployeeTest {
     @BeforeEach
-    public void clearBefore() {
-        Personnel.clearPersonnel();
-    }
-
     @AfterEach
-    public void clearAfter() {
+    public void clearPersonnel() {
         Personnel.clearPersonnel();
     }
 
@@ -48,17 +45,11 @@ public class EmployeeTest {
     @Test
     public void testIncreaseEmployeeSalary() {
         // Given
-        String name = "Jane Doe";
-        Gender gender = FEMALE;
-        Double salary = 30000d;
-        LocalDateTime startDate = LocalDateTime.of(2023, 9, 9, 9, 0);
-
-        // When
-        Employee employee = new Employee(name, gender, salary, startDate);
-
+        Employee employee = PersonnelUtility.createEmployee(30000);
         double initialSalary = employee.getSalary();
         double salaryIncrease = 3000;
 
+        // When
         employee.adjustSalary(salaryIncrease);
         double increasedSalary = employee.getSalary();
 
@@ -69,17 +60,11 @@ public class EmployeeTest {
     @Test
     public void testDecreaseEmployeeSalary() {
         // Given
-        String name = "John Doe";
-        Gender gender = MALE;
-        double salary = 23000d;
-        LocalDateTime startDate = LocalDateTime.of(2022, 5, 4, 7, 1);
-
-        // When
-        Employee employee = new Employee(name, gender, salary, startDate);
-
+        Employee employee = PersonnelUtility.createEmployee(23000);
         double initialSalary = employee.getSalary();
         double salaryDecrease = -3000;
 
+        // When
         employee.adjustSalary(salaryDecrease);
         double decreasedSalary = employee.getSalary();
 
@@ -91,9 +76,9 @@ public class EmployeeTest {
     @Test
     void testEmployeeSetterMethods() {
         // Given
-        Employee employee = new Employee(
-                "Sid", MALE, 42000,
-                LocalDateTime.of(1995, 5, 4, 9, 0));
+        double initialSalary = 42000;
+        LocalDateTime initialStartDate = LocalDateTime.of(1995, 5, 4, 9, 0);
+        Employee employee = PersonnelUtility.createEmployee(initialSalary, initialStartDate);
 
         // When
         double expectedSalary = 50000;
@@ -110,23 +95,14 @@ public class EmployeeTest {
     @Test
     public void testComparingMeanSalaryByGender() {
         // Given
-        Employee maleEmployee1 = new Employee(
-                "Sid", MALE, 42000,
-                LocalDateTime.of(1995, 5, 4, 9, 0));
+        Employee maleEmployee1 = PersonnelUtility.createEmployee(MALE, 42000);
+        Employee maleEmployee2 = PersonnelUtility.createEmployee(MALE, 29000);
 
-        Employee maleEmployee2 = new Employee(
-                "Landon", MALE, 29000,
-                LocalDateTime.of(1995, 5, 4, 10, 0));
+        Employee femaleEmployee1 = PersonnelUtility.createEmployee(FEMALE, 42000);
+        Employee femaleEmployee2 = PersonnelUtility.createEmployee(FEMALE, 29000);
 
-        Employee femaleEmployee1 = new Employee(
-                "Anna", FEMALE, 42000,
-                LocalDateTime.of(1995, 5, 4, 9, 0));
-
-        Employee femaleEmployee2 = new Employee(
-                "Lilian", FEMALE, 29000,
-                LocalDateTime.of(1995, 5, 4, 10, 0));
-
-        List<Employee> employees = new ArrayList<>(List.of(maleEmployee1, maleEmployee2, femaleEmployee1, femaleEmployee2));
+        List<Employee> employees = new ArrayList<>(List.of(
+                maleEmployee1, maleEmployee2, femaleEmployee1, femaleEmployee2));
 
         // Then
         double expectedMaleMeanSalary = (maleEmployee1.getSalary() + maleEmployee2.getSalary()) / 2;
@@ -152,46 +128,15 @@ public class EmployeeTest {
     }
 
     @Test
-    void testEmployeesArrayListInstance() {
-        // Given
-
-
-        Employee employee1 = new Employee(
-                "Mark", MALE, 42000,
-                LocalDateTime.of(1995, 5, 4, 9, 0));
-
-
-        Employee employee2 = new Employee(
-                "Norm", MALE, 42000,
-                LocalDateTime.of(2010, 5, 4, 8, 15));
-
-        // When
-        int expectedEmployeesSize = Employee.getEmployees().size();
-
-        // Then
-        assertEquals(expectedEmployeesSize, 2);
-
-        // When
-        List<Employee> expectedEmployees = new ArrayList<>(List.of(employee1, employee2));
-        List<Employee> employees = Employee.getEmployees();
-
-        // Then
-        assertEquals(expectedEmployees, employees);
-    }
-
-    @Test
     public void testSortingOfEmployeesByStartDate() {
         // Given
-        Employee employee1 = new Employee(
-                "Mark", MALE, 42000,
+        Employee employee1 = PersonnelUtility.createEmployee(
                 LocalDateTime.of(1995, 5, 4, 9, 0));
 
-        Employee employee2 = new Employee(
-                "Jenny", FEMALE, 42000,
+        Employee employee2 = PersonnelUtility.createEmployee(
                 LocalDateTime.of(1995, 5, 4, 10, 0));
 
-        Employee employee3 = new Employee(
-                "Norm", MALE, 39000,
+        Employee employee3 = PersonnelUtility.createEmployee(
                 LocalDateTime.of(2010, 5, 4, 8, 0));
 
         List<Employee> employees = new ArrayList<>(List.of(employee1, employee2, employee3));

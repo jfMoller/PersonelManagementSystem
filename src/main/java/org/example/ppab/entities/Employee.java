@@ -41,18 +41,17 @@ public class Employee extends Personnel {
     }
 
     public static double getMeanSalary(Gender gender) {
-        double meanSalary = Personnel.getEmployeesList().stream()
+        return Personnel.getEmployeesList().stream()
                 .filter(employee -> employee.getGender() == gender)
                 .mapToDouble(Employee::getSalary)
                 .average()
                 .orElse(0.0);
 
-        return meanSalary;
     }
 
     public static List<Employee> getEmployeesByStartDate() {
-        List<Employee> orderedList = new ArrayList(Personnel.getEmployeesList());
-        Collections.sort(orderedList, Comparator.comparing(Employee::getStartDate).reversed());
+        List<Employee> orderedList = new ArrayList<>(Personnel.getEmployeesList());
+        orderedList.sort(Comparator.comparing(Employee::getStartDate).reversed());
         return orderedList;
     }
 

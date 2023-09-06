@@ -52,7 +52,7 @@ public class Personnel {
         personnel.clear();
     }
 
-    private String getUniqueId(Gender gender) {
+    private String getUniqueId(Gender gender) throws IllegalArgumentException {
         int idLength = 12;
 
         if (gender.equals(MALE)) return DigitString.generateRandomDigits(idLength, false);

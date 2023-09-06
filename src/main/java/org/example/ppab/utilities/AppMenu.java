@@ -62,7 +62,7 @@ public class AppMenu {
                 ████████████████████████████████████████████████████████████████████████████████
                 █ 1. Display total number of people in the system                              █
                 █ 2. Display average salary for men and women among employees                  █
-                █ 3. Display employees sorted by their hiring date (earliest to latest)        █
+                █ 3. Display employees sorted by their hiring date (latest to earliest)        █
                 █ 4. Exit                                                                      █
                 ████████████████████████████████████████████████████████████████████████████████
                 █ Please enter your choice (1/2/3/4):                                          █
@@ -80,7 +80,7 @@ public class AppMenu {
                 "   - Amount of employees: " + employeeCount + "\n" +
                 "   - Amount of trainees: " + traineeCount + "\n" +
                 "   - Total amount of people: " + totalPersonnelCount + "\n" +
-                "\nPress any key to return to the menu...\n" +
+                "\nPress ENTER to return to the menu...\n" +
                 "████████████████████████████████████████████████████████████████████████████████\n";
 
     }
@@ -98,7 +98,7 @@ public class AppMenu {
                 "2. Display average salary for men and women among employees\n" +
                 "   - Mean salary: " + decimalFormat.format(maleMeanSalary) + " kr (men, n = " + maleEmployeeCount + ")\n" +
                 "   - Mean salary: " + decimalFormat.format(femaleMeanSalary) + " kr (women, n = " + femaleEmployeeCount + ")\n" +
-                "\nPress any key to return to the menu...\n" +
+                "\nPress ENTER to return to the menu...\n" +
                 "████████████████████████████████████████████████████████████████████████████████\n";
     }
 
@@ -120,7 +120,7 @@ public class AppMenu {
             number++;
         }
 
-        employeesBuilder.append("Press any key to return to the menu...\n");
+        employeesBuilder.append("Press ENTER to return to the menu...\n");
         employeesBuilder.append("████████████████████████████████████████████████████████████████████████████████\n");
 
         return employeesBuilder.toString();

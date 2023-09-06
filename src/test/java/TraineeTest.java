@@ -1,6 +1,7 @@
 import org.example.ppab.entities.Personnel;
 import org.example.ppab.entities.Trainee;
 import org.example.ppab.enums.Gender;
+import org.example.ppab.utilities.PersonnelUtility;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,12 +16,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 public class TraineeTest {
 
     @BeforeEach
-    public void clearBefore() {
-        Personnel.clearPersonnel();
-    }
-
     @AfterEach
-    public void clearAfter() {
+    public void clearPersonnel() {
         Personnel.clearPersonnel();
     }
 
@@ -46,8 +43,7 @@ public class TraineeTest {
     @Test
     void testTraineeSetterMethods() {
         // Given
-        Trainee trainee = new Trainee(
-                "Sid", MALE,
+        Trainee trainee = PersonnelUtility.createTrainee(
                 LocalDateTime.of(1995, 5, 4, 9, 0),
                 LocalDateTime.of(1995, 9, 5, 17, 0));
 
