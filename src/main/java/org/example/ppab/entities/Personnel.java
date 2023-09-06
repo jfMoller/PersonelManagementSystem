@@ -52,7 +52,7 @@ public class Personnel {
         personnel.clear();
     }
 
-    private String getUniqueId(Gender gender) throws IllegalArgumentException {
+    private String getUniqueId(Gender gender) {
         int idLength = 12;
 
         if (gender.equals(MALE)) return DigitString.generateRandomDigits(idLength, false);
@@ -67,39 +67,15 @@ public class Personnel {
     }
 
     public static int getTotalEmployees() {
-        int employeeCount = 0;
-
-        for (Personnel person : personnel) {
-            if (person instanceof Employee) {
-                employeeCount++;
-            }
-        }
-
-        return employeeCount;
+        return countPersonnelCohort(Employee.class);
     }
 
     public static int getTotalEmployees(Gender gender) {
-        int employeeCount = 0;
-
-        for (Personnel person : personnel) {
-            if (person instanceof Employee && person.gender == gender) {
-                employeeCount++;
-            }
-        }
-
-        return employeeCount;
+        return countPersonnelCohort(Employee.class, gender);
     }
 
     public static int getTotalTrainees() {
-        int traineeCount = 0;
-
-        for (Personnel person : personnel) {
-            if (person instanceof Trainee) {
-                traineeCount++;
-            }
-        }
-
-        return traineeCount;
+        return countPersonnelCohort(Trainee.class);
     }
 
     public static List<Employee> getEmployeesList() {
@@ -112,6 +88,26 @@ public class Personnel {
         }
 
         return employees;
+    }
+
+    private static int countPersonnelCohort(Class<?> cohort) {
+        int count = 0;
+        for (Personnel person : personnel) {
+            if (cohort.isInstance(person)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    private static int countPersonnelCohort(Class<?> cohort, Gender gender) {
+        int count = 0;
+        for (Personnel person : personnel) {
+            if (cohort.isInstance(person) && person.gender == gender) {
+                count++;
+            }
+        }
+        return count;
     }
 
 }

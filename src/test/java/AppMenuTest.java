@@ -31,7 +31,7 @@ public class AppMenuTest {
                 ████████████████████████████████████████████████████████████████████████████████
                 █ 1. Display total number of people in the system                              █
                 █ 2. Display average salary for men and women among employees                  █
-                █ 3. Display employees sorted by their hiring date (latest to earliest)        █
+                █ 3. Display employees sorted by their hiring date (earliest to latest)        █
                 █ 4. Exit                                                                      █
                 ████████████████████████████████████████████████████████████████████████████████
                 █ Please enter your choice (1/2/3/4):                                          █
@@ -108,11 +108,11 @@ public class AppMenuTest {
                 "████████████████████████████████████████████████████████████████████████████████\n" +
                         "3. Display a list of employees sorted by their hiring date (earliest to latest)\n" +
                         "Employee - 1\n" +
-                        "- id: " + employee1.getId() + "\n" +
-                        "- name: " + employee1.getName() + "\n" +
-                        "- gender: " + employee1.getGender() + "\n" +
-                        "- salary: " + employee1.getSalary() + "\n" +
-                        "- startDate: " + employee1.getStartDate() + "\n" +
+                        "- id: " + employee3.getId() + "\n" +
+                        "- name: " + employee3.getName() + "\n" +
+                        "- gender: " + employee3.getGender() + "\n" +
+                        "- salary: " + employee3.getSalary() + "\n" +
+                        "- startDate: " + employee3.getStartDate() + "\n" +
                         "-".repeat(30) + "\n" +
                         "Employee - 2\n" +
                         "- id: " + employee2.getId() + "\n" +
@@ -122,11 +122,11 @@ public class AppMenuTest {
                         "- startDate: " + employee2.getStartDate() + "\n" +
                         "-".repeat(30) + "\n" +
                         "Employee - 3\n" +
-                        "- id: " + employee3.getId() + "\n" +
-                        "- name: " + employee3.getName() + "\n" +
-                        "- gender: " + employee3.getGender() + "\n" +
-                        "- salary: " + employee3.getSalary() + "\n" +
-                        "- startDate: " + employee3.getStartDate() + "\n" +
+                        "- id: " + employee1.getId() + "\n" +
+                        "- name: " + employee1.getName() + "\n" +
+                        "- gender: " + employee1.getGender() + "\n" +
+                        "- salary: " + employee1.getSalary() + "\n" +
+                        "- startDate: " + employee1.getStartDate() + "\n" +
                         "-".repeat(30) + "\n" +
                         "Press ENTER to return to the menu...\n" +
                         "████████████████████████████████████████████████████████████████████████████████\n";

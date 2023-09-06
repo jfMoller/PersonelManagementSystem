@@ -19,20 +19,16 @@ public class Employee extends Personnel {
         return salary;
     }
 
-    public LocalDateTime getStartDate() {
-        return startDate;
-    }
-
     public void setSalary(double salary) {
         this.salary = salary;
     }
 
-    public void setStartDate(LocalDateTime startDate) {
-        this.startDate = startDate;
+    public LocalDateTime getStartDate() {
+        return startDate;
     }
 
-    public static List<Employee> getEmployees() {
-        return Personnel.getEmployeesList();
+    public void setStartDate(LocalDateTime startDate) {
+        this.startDate = startDate;
     }
 
     public void adjustSalary(double adjustment) {
@@ -46,12 +42,11 @@ public class Employee extends Personnel {
                 .mapToDouble(Employee::getSalary)
                 .average()
                 .orElse(0.0);
-
     }
 
     public static List<Employee> getEmployeesByStartDate() {
         List<Employee> orderedList = new ArrayList<>(Personnel.getEmployeesList());
-        orderedList.sort(Comparator.comparing(Employee::getStartDate).reversed());
+        orderedList.sort(Comparator.comparing(Employee::getStartDate));
         return orderedList;
     }
 

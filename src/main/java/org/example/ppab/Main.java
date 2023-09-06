@@ -5,7 +5,7 @@ import org.example.ppab.utilities.PersonnelUtility;
 
 public class Main {
     public static void main(String[] args) {
-        PersonnelUtility.generateDefaultPersonell();
+        PersonnelUtility.generateDefaultPersonnel();
         AppMenu.run();
     }
 }

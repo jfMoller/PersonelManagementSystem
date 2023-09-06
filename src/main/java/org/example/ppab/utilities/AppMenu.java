@@ -62,7 +62,7 @@ public class AppMenu {
                 ████████████████████████████████████████████████████████████████████████████████
                 █ 1. Display total number of people in the system                              █
                 █ 2. Display average salary for men and women among employees                  █
-                █ 3. Display employees sorted by their hiring date (latest to earliest)        █
+                █ 3. Display employees sorted by their hiring date (earliest to latest)        █
                 █ 4. Exit                                                                      █
                 ████████████████████████████████████████████████████████████████████████████████
                 █ Please enter your choice (1/2/3/4):                                          █
