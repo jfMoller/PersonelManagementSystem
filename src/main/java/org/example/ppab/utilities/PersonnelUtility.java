@@ -44,7 +44,7 @@ public class PersonnelUtility {
     }
 
     public static Trainee createTrainee() {
-        return createTrainee(DEFAULT_NAME, MALE, DEFAULT_START_DATE, DEFAULT_START_DATE.plusHours(8));
+        return createTrainee(DEFAULT_NAME, MALE, DEFAULT_START_DATE, DEFAULT_START_DATE);
     }
 
     public static Trainee createTrainee(LocalDateTime startDate, LocalDateTime endDate) {

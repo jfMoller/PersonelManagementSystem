@@ -90,6 +90,18 @@ public class Personnel {
         return employees;
     }
 
+    public static List<Trainee> getTraineesList() {
+        List<Trainee> trainees = new ArrayList<>();
+
+        for (Personnel person : personnel) {
+            if (person instanceof Trainee) {
+                trainees.add((Trainee) person);
+            }
+        }
+
+        return trainees;
+    }
+
     private static int countPersonnelCohort(Class<?> cohort) {
         int count = 0;
         for (Personnel person : personnel) {

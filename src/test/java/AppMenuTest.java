@@ -1,6 +1,7 @@
 import org.example.ppab.entities.Employee;
 import org.example.ppab.entities.Personnel;
 import org.example.ppab.entities.Trainee;
+import org.example.ppab.enums.Gender;
 import org.example.ppab.utilities.AppMenu;
 import org.example.ppab.utilities.PersonnelUtility;
 import org.junit.jupiter.api.AfterEach;
@@ -32,7 +33,8 @@ public class AppMenuTest {
                 █ 1. Display total number of people in the system                              █
                 █ 2. Display average salary for men and women among employees                  █
                 █ 3. Display employees sorted by their hiring date (earliest to latest)        █
-                █ 4. Exit                                                                      █
+                █ 4. Add new personnel                                                         █
+                █ 5. Exit                                                                      █
                 ████████████████████████████████████████████████████████████████████████████████
                 █ Please enter your choice (1/2/3/4):                                          █
                 ████████████████████████████████████████████████████████████████████████████████
@@ -135,6 +137,141 @@ public class AppMenuTest {
 
         // Then
         assertEquals(expectedOptionLayout, actualOptionLayout);
+
+    }
+
+    @Test
+    public void testAddNewPersonnel() {
+        // When
+        String expectedOptionLayout =
+                """
+                ████████████████████████████████████████████████████████████████████████████████
+                █                            4. Add new personnel                              █
+                ████████████████████████████████████████████████████████████████████████████████
+                █ 1. Add new employee                                                          █
+                █ 2. Add new trainee                                                           █
+                ████████████████████████████████████████████████████████████████████████████████
+                █ Please enter your choice (1/2):                                              █
+                ████████████████████████████████████████████████████████████████████████████████
+                """;
+
+        String actualOptionLayout = AppMenu.getAddNewPersonnel();
+
+        // Then
+        assertEquals(expectedOptionLayout, actualOptionLayout);
+
+    }
+
+    @Test
+    public void testAddNewEmployee() {
+        // Given
+
+        // When
+        String expectedEmployeeOptionLayout =
+                "████████████████████████████████████████████████████████████████████████████████\n" +
+                        "4. Add new personnel - Employee \n" +
+                        "To add a new employee, copy and paste the text below," + "\n" +
+                        "replacing <values> with the values for that employee." + "\n" +
+                        "-".repeat(30) + "\n" +
+                        "<name>,<MALE or FEMALE>,<salary>,<YYYY-M-D-H-M>" + "\n" +
+                        "-".repeat(30) + "\n" +
+                        "For example: John Miller,MALE,42000,2023-9-8-8-0"  + "\n" +
+                        "████████████████████████████████████████████████████████████████████████████████\n";
+
+        String expectedInput = "John Miller,MALE,42000,2023-9-8-8-0";
+
+        String[] expectedValues = expectedInput.split(",");
+        String expectedName = expectedValues[0];
+        Gender expectedGender = expectedValues[1].equals("MALE") ? MALE : FEMALE;
+        double expectedSalary = Double.parseDouble(expectedValues[2]);
+
+        String[] expectedDateValues = expectedValues[3].split("-");
+        int expectedYear = Integer.parseInt(expectedDateValues[0]);
+        int expectedMonth = Integer.parseInt(expectedDateValues[1]);
+        int expectedDay = Integer.parseInt(expectedDateValues[2]);
+        int expectedHour = Integer.parseInt(expectedDateValues[3]);
+        int expectedMinute = Integer.parseInt(expectedDateValues[4]);
+        LocalDateTime expectedStartDate = LocalDateTime.of(
+                expectedYear, expectedMonth, expectedDay, expectedHour, expectedMinute);
+
+        // Based on "John Miller,MALE,42000,2023-9-8-8-0"
+        Employee actualEmployee = PersonnelUtility.createEmployee("John Miller", MALE, 42000,
+                LocalDateTime.of(2023, 9, 8, 8, 0));
+
+        String actualName = actualEmployee.getName();
+        Gender actualGender = actualEmployee.getGender();
+        double actualSalary = actualEmployee.getSalary();
+        LocalDateTime actualStartDate = actualEmployee.getStartDate();
+
+        String actualOptionLayout = AppMenu.getAddNewEmployee();
+
+        // Then
+        assertEquals(expectedName, actualName);
+        assertEquals(expectedGender, actualGender);
+        assertEquals(expectedSalary, actualSalary);
+        assertEquals(expectedStartDate, actualStartDate);
+
+        assertEquals(expectedEmployeeOptionLayout, actualOptionLayout);
+
+    }
+
+    @Test
+    public void testAddNewTrainee() {
+        // When
+        String expectedEmployeeOptionLayout =
+                "████████████████████████████████████████████████████████████████████████████████\n" +
+                        "4. Add new personnel - Trainee \n" +
+                        "To add a new trainee, copy and paste the text below," + "\n" +
+                        "replacing <values> with the values for that trainee." + "\n" +
+                        "-".repeat(30) + "\n" +
+                        "<name>,<MALE or FEMALE>,<YYYY-M-D-H-M>,<YYYY-M-D-H-M>" + "\n" +
+                        "-".repeat(30) + "\n" +
+                        "For example: Janet Mills,FEMALE,2023-9-8-8-0,2023-12-8-17-0"  + "\n" +
+                        "████████████████████████████████████████████████████████████████████████████████\n";
+
+        String expectedInput = "Janet Mills,FEMALE,2023-9-8-8-0,2023-12-8-17-0";
+
+        String[] expectedValues = expectedInput.split(",");
+        String expectedName = expectedValues[0];
+        Gender expectedGender = expectedValues[1].equals("FEMALE") ? FEMALE : MALE;
+
+        String[] expectedStartDateValues = expectedValues[2].split("-");
+        int expectedStartYear = Integer.parseInt(expectedStartDateValues[0]);
+        int expectedStartMonth = Integer.parseInt(expectedStartDateValues[1]);
+        int expectedStartDay = Integer.parseInt(expectedStartDateValues[2]);
+        int expectedStartHour = Integer.parseInt(expectedStartDateValues[3]);
+        int expectedStartMinute = Integer.parseInt(expectedStartDateValues[4]);
+        LocalDateTime expectedStartDate = LocalDateTime.of(
+                expectedStartYear, expectedStartMonth, expectedStartDay, expectedStartHour, expectedStartMinute);
+
+        String[] expectedEndDateValues = expectedValues[3].split("-");
+        int expectedEndYear = Integer.parseInt(expectedEndDateValues[0]);
+        int expectedEndMonth = Integer.parseInt(expectedEndDateValues[1]);
+        int expectedEndDay = Integer.parseInt(expectedEndDateValues[2]);
+        int expectedEndHour = Integer.parseInt(expectedEndDateValues[3]);
+        int expectedEndMinute = Integer.parseInt(expectedEndDateValues[4]);
+        LocalDateTime expectedEndDate = LocalDateTime.of(
+                expectedEndYear, expectedEndMonth, expectedEndDay, expectedEndHour, expectedEndMinute);
+
+        // Based on "Janet Mills,FEMALE,2023-9-8-8-0,2023-12-8-17-0"
+        Trainee actualTrainee = PersonnelUtility.createTrainee("Janet Mills", FEMALE,
+                LocalDateTime.of(2023, 9, 8, 8, 0),
+                LocalDateTime.of(2023, 12, 8, 17, 0));
+
+        String actualName = actualTrainee.getName();
+        Gender actualGender = actualTrainee.getGender();
+        LocalDateTime actualStartDate = actualTrainee.getStartDate();
+        LocalDateTime actualEndDate = actualTrainee.getEndDate();
+
+        String actualOptionLayout = AppMenu.getAddNewTrainee();
+
+        // Then
+        assertEquals(expectedName, actualName);
+        assertEquals(expectedGender, actualGender);
+        assertEquals(expectedStartDate, actualStartDate);
+        assertEquals(expectedEndDate, actualEndDate);
+
+        assertEquals(expectedEmployeeOptionLayout, actualOptionLayout);
 
     }
 
