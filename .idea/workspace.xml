@@ -6,12 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fc03870a-31fa-4f22-8121-387fbfab9d7f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ppab/entities/Personnel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ppab/entities/Personnel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ppab/utilities/AppMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ppab/utilities/AppMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ppab/utilities/PersonnelUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ppab/utilities/PersonnelUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/AppMenuTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/AppMenuTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/ppab/entities/Personnel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/ppab/entities/Personnel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/AppMenuTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/AppMenuTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,6 +148,7 @@
       <workItem from="1693917815961" duration="4597000" />
       <workItem from="1693986893262" duration="6408000" />
       <workItem from="1694162666670" duration="12513000" />
+      <workItem from="1694180179036" duration="570000" />
     </task>
     <servers />
   </component>
